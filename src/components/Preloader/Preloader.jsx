@@ -8,7 +8,7 @@ const Preloader = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // Display preloader for 2 seconds
+    }, 3000); // Display preloader for 3 seconds
 
     return () => clearTimeout(timer);
   }, []);
@@ -24,7 +24,7 @@ const Preloader = () => {
           <motion.img
             src={preloaderImage}
             alt="Loading..."
-            className="w-64 h-64"
+            className="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full"
             initial={{ scale: 0.5 }}
             animate={{ scale: 1 }}
             transition={{ duration: 2, ease: "easeInOut" }}

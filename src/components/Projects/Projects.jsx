@@ -1,92 +1,77 @@
 import React from "react";
-import { motion } from "framer-motion";
-import backgroundImage from "../../assets/space.jpg";
+import bg1 from "../../images/acc.png";
+import bg2 from "../../images/sf.png";
+import bg3 from "../../images/tic.png";
 
-const Projects = () => {
-  const projects = [
-    {
-      title: "Accurate Classes Website",
-      description: "Developed a website for Accurate Classes, an online Skills Educating Company.",
-      url: "https://accurate-classes.netlify.app/",
-    },
-    {
-      title: "Medicozzz Website",
-      description: "Developed a website for Medicozzz, an online shopping medical website.",
-      url: "https://medicozzz.netlify.app/",
-    },
-    {
-      title: "Smarttutr Website",
-      description: "Handle website Management for Smarttutr, an online service-based company for teaching institutes.",
-      url: "https://smarttutr.in/",
-    },
-  ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
-      },
-    },
+function Projects() {
+  const customFontStyle = {
+    fontFamily: "'Geist Regular', sans-serif",
+    fontWeight: 600,
+    fontStyle: "normal",
   };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-      },
-    },
-  };
-
   return (
+    
     <>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-        className="container mx-auto px-4 py-6"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          minHeight: "100vh",
-        }}
-      >
-        <div className="container mx-auto px-4 py-6">
-          <motion.h1 variants={itemVariants} className="text-3xl font-bold mb-8 text-white">
-            Some Modern <span className="text-green-400">Projects !</span>
-          </motion.h1>
-          <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6" variants={containerVariants}>
-            {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="bg-gray-900 rounded-xl p-6 transition ease-in-out shadow-sm hover:scale-105 shadow-green-500"
-              >
-                <h2 className="text-xl font-bold mb-2 text-white">{project.title}</h2>
-                <p className="text-gray-300 mb-4">{project.description}</p>
-                <a
-                  href={project.url}
-                  className="text-blue-400 hover:text-blue-300 transition duration-300 ease-in-out"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Visit Website
-                </a>
-              </motion.div>
-            ))}
-          </motion.div>
+    <div 
+       style={customFontStyle}
+       className="flex flex-row justify-between text-black  p-20 border-b-2 border-black bg-white">
+
+      <div className="w-1/2">
+          <a href="https://synapseforge.vercel.app/"><img className="w-[700px] rounded-xl shadow-2xl " src={bg2} alt="" /></a>
         </div>
-      </motion.div>
+        <div className="w-1/2 p-8 font-semibold  mr-8 ">
+          <h1 className="text-5xl capitalize ml-8">SYNAPSE FORGE </h1>
+          <p className="text-md mt-6 capitalize ml-8">
+          The "Accurate Classes" website is a dynamic and modern platform designed for an ed-tech company, built using React. The website provides a user-friendly interface to deliver educational content and resources effectively. It showcases a clean, responsive design that caters to various screen sizes, ensuring accessibility and usability for all users.
+          </p>
+          <div className="border ml-10 mt-6  p-2 rounded-2xl m-2 inline-block shadow-sm shadow-black hover:bg-gray-900 hover:text-white transition">
+            <a href="https://synapseforge.vercel.app/">Visit The Project</a>
+          </div>
+        </div>
+
+      </div>
+      <div 
+       style={customFontStyle}
+        className=" flex flex-row justify-between text-black bg-gray-50 p-20 border-b-2 border-zinc-900 ">
+        
+        <div className="w-1/2 p-8 font-semibold  mr-8 ">
+          <h1 className="text-5xl capitalize ml-8 leading-none">Accuarate Classess</h1>
+          <p className="text-lg mt-6 capitalize  ml-8">
+          The "Accurate Classes" website is a dynamic and modern platform designed for an ed-tech company, built using React. The website provides a user-friendly interface to deliver educational content and resources effectively. It showcases a clean, responsive design that caters to various screen sizes, ensuring accessibility and usability for all users.
+          </p>
+          <div className="border ml-10 mt-6  p-2 rounded-2xl m-2 inline-block shadow-sm shadow-black hover:bg-gray-900 hover:text-white transition">
+           <a href="https://accurate-classes.netlify.app/">Visit The Project</a> 
+          </div>
+        </div>
+        <div className="w-1/2">
+          <a href="https://accurate-classes.netlify.app/"><img className="w-[700px] rounded-xl  shadow-2xl " src={bg1} alt="" /></a>
+        </div>
+      </div>
+
+      <div 
+       style={customFontStyle}
+       className="flex flex-row justify-between text-black  p-20 border-b-2 bg-white">
+
+      <div className="w-1/2 bg-gray-900 p-4 rounded-xl">
+          <a href="https://ticgame.tech/"><img className="w-[700px]  rounded-xl shadow-2xl " src={bg3} alt="" /></a>
+        </div>
+        <div className="w-1/2 p-8 font-semibold  mr-8 ">
+          <h1 className="text-5xl capitalize ml-8">GAMING WEBSITE </h1>
+          <p className="text-md mt-6 capitalize ml-8">
+          The "Accurate Classes" website is a dynamic and modern platform designed for an ed-tech company, built using React. The website provides a user-friendly interface to deliver educational content and resources effectively. It showcases a clean, responsive design that caters to various screen sizes, ensuring accessibility and usability for all users.
+          </p>
+          <div className="border ml-10 mt-6  p-2 rounded-2xl m-2 inline-block shadow-sm shadow-black hover:bg-gray-900 hover:text-white transition">
+            <a href="https://ticgame.tech/">Visit The Project</a>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      
     </>
   );
-};
+}
 
 export default Projects;

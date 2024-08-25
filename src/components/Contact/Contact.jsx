@@ -1,77 +1,60 @@
-import React, { useState } from 'react';
-import backgroundImage from "../../assets/space.jpg";
-import { motion } from "framer-motion";
+import React, { useState } from 'react'
 
-const ContactPage = () => {
+function Contact() {
+  const customFontStyle = {
+    fontFamily: "'Geist Regular', sans-serif",
+    fontWeight: 600,
+    fontStyle: "normal",
+  };
+
   const [formData, setFormData] = useState({
     name: '',
-    phoneNumber: '9760302690',
-    message: '',
+    email: '',
+    phone: ''
   });
-
-  const handleWhatsAppMessage = () => {
-    const message = `Name: ${formData.name}, Message: ${formData.message}`;
-    const whatsappURL = `https://wa.me/${formData.phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappURL, '_blank');
-  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Container animation variant
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
-      },
-    },
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Construct the WhatsApp message
+    const message = `New Contact Form Submission:
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}`;
 
-  // Item animation variant
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-      },
-    },
+    // Replace 'YOUR_PHONE_NUMBER' with your actual WhatsApp number, including country code
+    const whatsappNumber = '+919760302690';
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
-    <>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-        className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+    <form onSubmit={handleSubmit}>
+      <div 
+        style={customFontStyle} 
+        className='p-4 md:p-20 text-xl md:text-4xl border-b-2 border-black m-2 md:m-8'
       >
-        <motion.div className='p-4 justify-center text-center text-white' variants={containerVariants}>
-          <motion.h1 className='font-bold text-4xl md:text-5xl' variants={itemVariants}>
-            Get in <span className='text-green-400'>touch</span>
-            <motion.span
-              animate={{ opacity: [1, 0.2, 1] }}
-              transition={{ duration: 1, repeat: Infinity }}
-            >
-              .
-            </motion.span>
-          </motion.h1>
-          <motion.p className='text-xl md:text-2xl' variants={itemVariants}>Don't be Shy</motion.p>
-          <motion.p className='text-lg md:text-xl text-yellow-100' variants={itemVariants}>
-            Feel Free to Connect , Let's Grow together, <br /> a good connection is worth millions.
-          </motion.p>
-        </motion.div>
-        
-      </motion.div>
-    </>
-  );
-};
+        <h1 className='flex justify-center text-3xl md:text-5xl'>Contact Form</h1>
+        <h2 className='mt-10 md:mt-20'>
+          Hello Sir! , Please Enter Your Name Here <span><input className='border-b-2 border-black w-full md:w-auto' type="text" name="name" value={formData.name} onChange={handleChange} required /></span> , This is Contact Form , <br className='md:hidden'/><br className='md:hidden'/>
+          Please Enter Your Email Here <input className='border-b-2 border-black w-full md:w-auto' type="email" name="email" value={formData.email} onChange={handleChange} required /> , For a Easy Contact , <br className='md:hidden'/><br className='md:hidden'/>
+          Can You Write Down Your Mobile Number <input className='border-b-2 border-black w-full md:w-auto' type="tel" name="phone" value={formData.phone} onChange={handleChange} required /> , <br className='mt-4 md:mt-8' /> <br />
+        </h2>
+        <h2 className='mt-6 md:mt-10'>Thanks For Reaching me out , i assure you , we will <span className='text-blue-700'>connect</span> soon .</h2>
+        <div className='mt-6 md:mt-10 flex justify-center'>
+          <button type="submit" className='bg-black text-xl text-white font-bold py-2  px-4 rounded'>
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  )
+}
 
-export default ContactPage;
+export default Contact

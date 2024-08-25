@@ -5,6 +5,13 @@
 /* src/assets/fonts/Geist-Regular.ttf */
 
 @font-face {
+  font-family: 'Geist Regular';
+  src: url('/src/assets/fonts/Geist-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'SF Pro Icons Regular';
   src: url('/src/assets/fonts/SF-Pro-Icons-Regular.ttf') format('truetype');
   font-weight: normal;
