@@ -4,15 +4,15 @@ import preloaderImage from '../../images/profile.png'; // Add your preloader ima
 
 const Preloader = () => {
   const [isLoading, setIsLoading] = useState(true);
-
+  
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 3000); // Display preloader for 3 seconds
-
+    
     return () => clearTimeout(timer);
   }, []);
-
+  
   return (
     isLoading && (
       <div className="preloader fixed top-0 left-0 w-full h-full bg-zinc-950 flex items-center justify-center z-50">

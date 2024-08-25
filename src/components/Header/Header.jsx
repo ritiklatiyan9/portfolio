@@ -1,9 +1,8 @@
-import React, {useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaHome, FaUser, FaProjectDiagram, FaPhone } from 'react-icons/fa';
 
-const Header = ({timeline,ease}) => {
-  
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {

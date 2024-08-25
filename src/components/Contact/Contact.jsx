@@ -38,7 +38,7 @@ Phone: ${formData.phone}`;
     <form onSubmit={handleSubmit}>
       <div 
         style={customFontStyle} 
-        className='p-4 md:p-20 text-xl md:text-4xl border-b-2 border-black m-2 md:m-8'
+        className='p-2 md:p-20 text-xl md:text-4xl border-b-2 border-black m-2 md:m-8'
       >
         <h1 className='flex justify-center text-3xl md:text-5xl'>Contact Form</h1>
         <h2 className='mt-10 md:mt-20'>

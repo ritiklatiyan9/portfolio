@@ -1,5 +1,6 @@
 import React from "react";
 import Preloader from "../../Preloader/Preloader";
+
 import alpha1 from "../../../images/bg-img1.png";
 import alpha2 from "../../../images/gif3d.gif";
 import alpha3 from "../../../images/profile.gif";
@@ -9,7 +10,36 @@ import imgwd from "../../../images/img-withdog.png";
 import { FaArrowRight } from "react-icons/fa";
 
 function useTypewriter(words, typingSpeed = 100, deletingSpeed = 50, pauseTime = 2000) {
-  // ... (keep the existing useTypewriter implementation)
+  const [text, setText] = React.useState("");
+  const [isDeleting, setIsDeleting] = React.useState(false);
+  const [wordIndex, setWordIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const handleTyping = () => {
+      const currentWord = words[wordIndex];
+      if (isDeleting) {
+        setText((prev) => prev.slice(0, -1));
+      } else {
+        setText((prev) => currentWord.slice(0, prev.length + 1));
+      }
+
+      if (!isDeleting && text === currentWord) {
+        setTimeout(() => setIsDeleting(true), pauseTime);
+      } else if (isDeleting && text === "") {
+        setIsDeleting(false);
+        setWordIndex((current) => (current + 1) % words.length);
+      }
+    };
+   
+    const typingInterval = setInterval(
+      handleTyping,
+      isDeleting ? deletingSpeed : typingSpeed
+    );
+
+    return () => clearInterval(typingInterval);
+  }, [words, wordIndex, isDeleting, text, typingSpeed, deletingSpeed, pauseTime]);
+
+  return text;
 }
 
 function Home1() {
@@ -18,6 +48,7 @@ function Home1() {
 
   return (
     <>
+     
       <Preloader />
       <div className="flex flex-col p-4 lg:flex-row justify-between bg-gray-50 border-b-2 border-black mb-4">
         <div className="w-full lg:w-1/2 flex flex-col justify-center lg:ml-4 xl:ml-40 p-4 lg:p-0">
@@ -33,6 +64,9 @@ function Home1() {
           </h2>
           <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-center lg:text-left m-1">
             Full Stack <span className="text-yellow-500">JavaScript</span> Developer
+          </p>
+          <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-center lg:text-left mt-2">
+            {typewriterText}
           </p>
         </div>
         <div className="w-full lg:w-1/2 flex flex-col space-y-6 lg:space-y-10 mb-6 lg:mb-10 p-4 lg:p-0">
@@ -70,7 +104,7 @@ function Home1() {
             <span className="rounded-full px-4 sm:px-6 inline-block border-zinc-900 capitalize py-1 text-lg sm:text-2xl border">
               <a href="#" className="flex items-center">
                 Click Here
-                <FaArrowRight className="ml-2 w-4 mt-1  rotate-[-45deg]" />
+                <FaArrowRight className="ml-2 rotate-[-45deg]" />
               </a>
             </span>
           </div>
