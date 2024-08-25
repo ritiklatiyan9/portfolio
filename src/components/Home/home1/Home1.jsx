@@ -10,40 +10,51 @@ import imgwd from "../../../images/img-withdog.png";
 import { FaArrowRight } from "react-icons/fa";
 
 function useTypewriter(words, typingSpeed = 100, deletingSpeed = 50, pauseTime = 2000) {
-  const [text, setText] = React.useState("");
+  const [text, setText] = React.useState('');
   const [isDeleting, setIsDeleting] = React.useState(false);
   const [wordIndex, setWordIndex] = React.useState(0);
+  const [isWaiting, setIsWaiting] = React.useState(false);
 
   React.useEffect(() => {
+    let timer;
+
     const handleTyping = () => {
       const currentWord = words[wordIndex];
+
+      if (isWaiting) {
+        setIsWaiting(false);
+        setIsDeleting(true);
+        return;
+      }
+
       if (isDeleting) {
         setText((prev) => prev.slice(0, -1));
+        if (text === '') {
+          setIsDeleting(false);
+          setWordIndex((current) => (current + 1) % words.length);
+        }
       } else {
         setText((prev) => currentWord.slice(0, prev.length + 1));
-      }
-
-      if (!isDeleting && text === currentWord) {
-        setTimeout(() => setIsDeleting(true), pauseTime);
-      } else if (isDeleting && text === "") {
-        setIsDeleting(false);
-        setWordIndex((current) => (current + 1) % words.length);
+        if (text === currentWord) {
+          setIsWaiting(true);
+          timer = setTimeout(() => setIsWaiting(false), pauseTime);
+        }
       }
     };
-   
-    const typingInterval = setInterval(
+
+    timer = setTimeout(
       handleTyping,
-      isDeleting ? deletingSpeed : typingSpeed
+      isWaiting ? pauseTime : isDeleting ? deletingSpeed : typingSpeed
     );
 
-    return () => clearInterval(typingInterval);
-  }, [words, wordIndex, isDeleting, text, typingSpeed, deletingSpeed, pauseTime]);
+    return () => clearTimeout(timer);
+  }, [words, wordIndex, isDeleting, text, typingSpeed, deletingSpeed, pauseTime, isWaiting]);
 
   return text;
 }
 
 function Home1() {
-  const skills = ["CODE", "MERN STACK", "NODE JS", "DEVOPS", "React Native"];
+  const skills = ["CODE", "MERN STACK", "NETWORKING", "DEVOPS", "REACT NATIVE"];
   const typewriterText = " < "+ useTypewriter(skills) + "  > ";
 
   return (
@@ -65,7 +76,7 @@ function Home1() {
           <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-center lg:text-left m-1">
             Full Stack <span className="text-yellow-500">JavaScript</span> Developer
           </p>
-          <p className="text-lg sm:text-xl text-violet-700 lg:text-2xl font-bold text-center lg:text-left mt-2">
+          <p className="text-lg sm:text-xl text-violet-800 lg:text-2xl font-bold text-center lg:text-left mt-2">
              {typewriterText}
           </p>
         </div>
