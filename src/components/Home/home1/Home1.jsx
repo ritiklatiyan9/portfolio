@@ -44,7 +44,7 @@ function useTypewriter(words, typingSpeed = 100, deletingSpeed = 50, pauseTime =
 
 function Home1() {
   const skills = ["CODE", "MERN STACK", "NODE JS", "DEVOPS", "React Native"];
-  const typewriterText = useTypewriter(skills);
+  const typewriterText = " < "+ useTypewriter(skills) + "  > ";
 
   return (
     <>
@@ -65,8 +65,8 @@ function Home1() {
           <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-center lg:text-left m-1">
             Full Stack <span className="text-yellow-500">JavaScript</span> Developer
           </p>
-          <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-center lg:text-left mt-2">
-            {typewriterText}
+          <p className="text-lg sm:text-xl text-violet-700 lg:text-2xl font-bold text-center lg:text-left mt-2">
+             {typewriterText}
           </p>
         </div>
         <div className="w-full lg:w-1/2 flex flex-col space-y-6 lg:space-y-10 mb-6 lg:mb-10 p-4 lg:p-0">
