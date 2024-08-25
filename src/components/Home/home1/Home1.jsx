@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Preloader from "../../Preloader/Preloader.jsx"; // Adjust the import path as needed
 import alpha1 from "../../../images/bg-img1.png";
 import alpha2 from "../../../images/gif3d.gif";
 import alpha3 from "../../../images/profile.gif";
@@ -58,7 +59,8 @@ function Home1() {
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row mt-8 justify-between bg-gray-100 border-b-2 border-black mb-4">
+      <Preloader />
+      <div className="flex flex-col p-8 lg:flex-row justify-between bg-gray-100 border-b-2 border-black mb-4">
         <div className="w-full lg:w-1/2 flex flex-col justify-center lg:ml-40 p-4 lg:p-0">
           <div className="w-80 mb-8 mx-auto lg:mx-0">
             <img className="rounded-2xl shadow-2xl" src={alpha4} alt="" />
@@ -94,8 +96,8 @@ function Home1() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row justify-center mb-10">
-        <div className="w-full lg:w-1/2 p-20  flex justify-center lg:justify-start">
+      <div className="flex flex-col lg:flex-row justify-center">
+        <div className="w-full lg:w-1/2 p-20 flex justify-center lg:justify-start">
           <img className="w-72 mt-10 lg:ml-20 lg:mt-40" src={imgwd} alt="" />
         </div>
         <div className="w-full lg:w-1/2 text-3xl lg:text-5xl font-semibold flex flex-col justify-center items-center mt-10 lg:mt-40">
