@@ -96,7 +96,7 @@ function Home1() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row justify-center">
+      <div className="flex flex-col mb-10 lg:flex-row justify-center">
         <div className="w-full lg:w-1/2 p-20 flex justify-center lg:justify-start">
           <img className="w-72 mt-10 lg:ml-20 lg:mt-40" src={imgwd} alt="" />
         </div>
