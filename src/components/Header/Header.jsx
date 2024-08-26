@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaHome, FaUser, FaProjectDiagram, FaPhone } from 'react-icons/fa';
 
+const customFontStyle = {
+  fontFamily: "'SF Pro Icons Regular', sans-serif",
+  fontWeight: 600,
+  fontStyle: "normal",
+};
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -26,7 +31,10 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-gray-950 text-white shadow-md relative z-50">
+    <header 
+    
+    style={customFontStyle}
+    className="bg-gray-950 text-white shadow-md relative z-50">
       <div className="container mx-auto px-4 py-5 header-container">
         <div className="flex justify-between items-center">
           <div className="text-2xl font-bold">

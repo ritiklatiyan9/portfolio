@@ -2,9 +2,16 @@ import React from 'react';
 import { FaInstagram, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 import { FaHandPointLeft } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+const customFontStyle = {
+  fontFamily: "'SF Pro Icons Regular', sans-serif",
+  fontWeight: 600,
+  fontStyle: "normal",
+};
 const Footer = () => {
   return (
-    <footer className="bg-gray-950 text-white">
+    <footer 
+    style={customFontStyle} 
+    className="bg-gray-950 text-white">
       <div className="container mx-auto px-4 py-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {/* Column 1 */}

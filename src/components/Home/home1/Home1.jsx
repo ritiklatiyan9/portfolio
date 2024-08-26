@@ -1,5 +1,6 @@
 import React from "react";
 import Preloader from "../../Preloader/Preloader";
+import { Link } from "react-router-dom";
 
 import alpha1 from "../../../images/bg-img1.png";
 import alpha2 from "../../../images/gif3d.gif";
@@ -103,20 +104,20 @@ function Home1() {
       <div className="flex flex-col bg-yellow-400 mb-10 lg:flex-row justify-center">
         <div className="w-full lg:w-1/2 p-6 sm:p-12 lg:p-20 flex justify-center lg:justify-start">
           <img
-            className="w-44 sm:w-60 lg:w-72 mt-10 lg:ml-20 lg:mt-40"
+            className="w-44 sm:w-60 lg:w-96 mt-10 lg:ml-36 lg:mt-40"
             src={imgwd}
             alt="With Dog"
           />
         </div>
         <div className="w-full lg:w-1/2 text-xl sm:text-2xl lg:text-5xl font-semibold flex flex-col justify-center mb-20 sm:mb-40 lg:mb-60 px-6 sm:px-10 lg:px-20 mt-10 lg:mt-40">
-          <img className="w-48 sm:w-56 lg:w-64 mx-auto lg:mx-0" src={ele1} alt="Element" />
+          <img className="w-56 sm:w-56 lg:w-64 mx-auto lg:mx-0" src={ele1} alt="Element" />
           <h1 className="text-center lg:text-left font-semibold mt-4">KNOW ABOUT ME</h1>
           <div className="flex justify-center lg:justify-start mt-4">
             <span className="rounded-full px-4 sm:px-6 inline-block border-zinc-900 capitalize py-1 text-lg sm:text-2xl border">
-              <a href="#" className="flex items-center">
-                Click Here
-                <FaArrowRight className="ml-2 rotate-[-45deg]" />
-              </a>
+            <Link to="/about" className="flex items-center">
+      Click Here
+      <FaArrowRight className="ml-2 rotate-[-45deg]" />
+    </Link>
             </span>
           </div>
         </div>
