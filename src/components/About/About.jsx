@@ -100,7 +100,7 @@ const AboutMe = () => {
                 When I'm not coding, you can find me exploring new technologies or contributing to open-source projects.
               </p>
 
-              <img className="w-96 ml-8 rounded-2xl shadow-2xl md:ml-48" src={img2} alt="" />
+              <img className="w-96  rounded-2xl shadow-2xl md:ml-48" src={img2} alt="" />
             </div>
            
           </ParallaxSection>
