@@ -2,12 +2,12 @@ import React from "react";
 import Preloader from "../../Preloader/Preloader";
 import { Link } from "react-router-dom";
 
-import alpha1 from "../../../images/bg-img1.png";
-import alpha2 from "../../../images/gif3d.gif";
-import alpha3 from "../../../images/profile.gif";
-import alpha4 from "../../../images/img.png";
-import ele1 from "../../../images/ele1.png";
-import imgwd from "../../../images/img-withdog.png";
+import alpha1 from "../../../assets/images/1.png";
+import alpha2 from "../../../assets/images/gif3d.gif";
+import alpha3 from "../../../assets/images/profile.gif";
+import alpha4 from "../../../assets/images/2.png";
+import ele1 from "../../../assets/images/ele1.png";
+import imgwd from "../../../assets/images/img-withdog.png";
 import { FaArrowRight } from "react-icons/fa";
 
 function useTypewriter(words, typingSpeed = 100, deletingSpeed = 50, pauseTime = 2000) {
@@ -62,7 +62,11 @@ function Home1() {
     <>
      
       <Preloader />
-      <div className="flex flex-col p-4 lg:flex-row justify-between bg-gray-50 border-b-2 border-black mb-4">
+      <div 
+      data-scroll
+      data-scroll-section
+      data-scroll-speed="-.3"
+       className="flex flex-col p-4 lg:flex-row justify-between bg-gray-50 border-b-2 border-black mb-4">
         <div className="w-full lg:w-1/2 flex flex-col justify-center lg:ml-4 xl:ml-40 p-4 lg:p-0">
           <div className="w-64 sm:w-80 mb-8 mx-auto lg:mx-0">
             <img

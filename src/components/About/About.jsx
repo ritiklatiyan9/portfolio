@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FaInstagram, FaLinkedin, FaGithub, FaTwitter, FaCloud, FaReact, FaNodeJs, FaDatabase, FaServer, FaMobileAlt, FaHtml5, FaCss3Alt, FaGitAlt } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiCplusplus, SiJavascript, SiTypescript, SiPython, SiDocker, SiKubernetes, SiTailwindcss } from "react-icons/si";
-import img2 from '../../images/img2.jpg'
+import img2 from '../../assets/images/img2.jpg'
 const customFontStyle = {
   fontFamily: "'Geist Regular', sans-serif",
   fontWeight: 600,

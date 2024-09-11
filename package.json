@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy": "http://localhost:3001",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,11 +12,12 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.1.4",
+    "axios": "^1.7.5",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "framer-motion": "^11.3.30",
-    "locomotive-scroll": "^4.1.4",
+    "locomotive-scroll": "^5.0.0-beta.15",
     "lucide-react": "^0.436.0",
     "mongoose": "^8.4.4",
     "react": "^18.3.1",

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import techy from '../././../../images/techy-removebg.png';
+import techy from "../../../assets/images/techy.jpg"
 
 function Home2() {
   const controls = useAnimation();

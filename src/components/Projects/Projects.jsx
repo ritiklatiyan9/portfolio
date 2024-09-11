@@ -1,7 +1,8 @@
 import React from "react";
-import bg1 from "../../images/acc.png";
-import bg2 from "../../images/sf.png";
-import bg3 from "../../images/tic.png";
+import bg1 from "../../assets/images/acc.png";
+import bg2 from "../../assets/images/sf.png";
+import bg3 from "../../assets/images/tic.png";
+import bg4 from "../../assets/images/shs.png";
 
 function Projects() {
   const customFontStyle = {
@@ -22,7 +23,7 @@ function Projects() {
       <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
         <a href={link}>
           <img
-            className="w-full lg:w-[700px] rounded-xl shadow-2xl"
+            className="w-full lg:w-[700px] rounded-xl shadow-2xl shadow-zinc-800"
             src={imgSrc}
             alt={title}
           />
@@ -31,7 +32,7 @@ function Projects() {
       <div className="w-full lg:w-1/2 p-4 lg:p-8 font-semibold">
         <h1 className="text-3xl lg:text-5xl capitalize mb-4 lg:mb-0">{title}</h1>
         <p className="text-md mt-4 lg:mt-6 capitalize">{description}</p>
-        <div className="inline-block mt-6 p-2 rounded-2xl border shadow-sm shadow-black hover:bg-gray-900 hover:text-white transition">
+        <div className="inline-block mt-6 p-2 rounded-2xl  shadow-sm shadow-black hover:bg-green-950 hover:text-white transition">
           <a href={link}>Visit The Project</a>
         </div>
       </div>
@@ -47,11 +48,12 @@ function Projects() {
         link="https://synapseforge.vercel.app/"
       />
 
-      <ProjectSection
-        imgSrc={bg1}
-        title="Accurate Classes"
-        description="The 'Accurate Classes' website is a dynamic and modern platform designed for an ed-tech company, built using React. The website provides a user-friendly interface to deliver educational content and resources effectively. It showcases a clean, responsive design that caters to various screen sizes, ensuring accessibility and usability for all users."
-        link="https://accurate-classes.netlify.app/"
+     
+<ProjectSection
+        imgSrc={bg4}
+        title="Shashwat Public School Website"
+        description="The 'Shashwatpublicschool.com' website is a dynamic and modern platform designed for a school , built using React. The website provides a user-friendly interface to deliver educational content and resources effectively. It showcases a clean, responsive design that caters to various screen sizes, ensuring accessibility and usability for all users."
+        link="https://shashwatpublicschool.com/"
         reversed
       />
 
@@ -61,6 +63,14 @@ function Projects() {
         description="The 'Gaming Website' is an engaging platform designed for gaming enthusiasts. Built with modern web technologies, it offers an immersive experience for users to explore various games and gaming-related content. The website features a sleek, responsive design that adapts seamlessly to different devices, providing an optimal viewing experience for both desktop and mobile users."
         link="https://ticgame.tech/"
       />
+       <ProjectSection
+        imgSrc={bg1}
+        title="Accurate Classes"
+        description="The 'Accurate Classes' website is a dynamic and modern platform designed for an ed-tech company, built using React. The website provides a user-friendly interface to deliver educational content and resources effectively. It showcases a clean, responsive design that caters to various screen sizes, ensuring accessibility and usability for all users."
+        link="https://accurate-classes.netlify.app/"
+        reversed
+      />
+      
     </>
   );
 }

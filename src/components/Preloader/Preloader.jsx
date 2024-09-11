@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import preloaderImage from '../../images/profile.png'; // Add your preloader image path here
+import preloaderImage from '../../assets/images/profile.png'; // Add your preloader image path here
 
 const Preloader = () => {
   const [isLoading, setIsLoading] = useState(true);
